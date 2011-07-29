@@ -1,0 +1,4 @@
+erlang solution for http://www.flownet.com/ron/papers/lisp-java/
+run it with ./encoder.sh and it will say if there is any difference from expected output.txt from the site
+
+
