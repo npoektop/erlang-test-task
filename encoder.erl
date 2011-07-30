@@ -170,6 +170,7 @@ encode_loop(I, End, Number, Stripped, Length, Position, Words) ->
             Subnum = string:substr(Stripped, Position, I),
             List = number_to_words(Subnum),
             lists:foreach(fun(W)-> encode(Number, Stripped, Length, Position+I, [W]++Words) end, List),
+            %% TODO: ain't tail recursion. Rewrite using fold.
             (List =:= []) and encode_loop(I+1, End, Number, Stripped, Length, Position, Words)
     end.
 
